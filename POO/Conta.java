@@ -1,7 +1,5 @@
 package POO;
 
-import java.time.format.TextStyle;
-
 public class Conta {
     // Atributos
     double numero;
@@ -46,14 +44,12 @@ public class Conta {
      * Metodo para saque
      * @category Valor na conta
     */
-    public void sacar(double valor){
-        if ((valor > 0) && (valor <= this.saldo + this.limite)){
-            this.saldo = this.saldo - valor;
-            System.out.println("Saque realizado com sucesso!");
-        } else if (valor <= 0){
-            System.out.println("Valor do Saque Inválido");
-        } else {
-            System.out.println("Saldo insuficiente");
-        }
+    public boolean sacar(double valor){
+    if ((valor > 0) && (valor <= this.saldo + this.limite)){
+        this.saldo = this.saldo - valor;
+        return true;
+    } else {
+        return false;
     }
+    }   
 }
