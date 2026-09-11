@@ -1,3 +1,4 @@
+package PrimeirasAulas;
 import java.util.Scanner;
 
 public class AtividadeP2 {
