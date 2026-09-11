@@ -74,13 +74,27 @@ public class UsuarioBiblioteca {
         }
     }
 
-    // public boolean registrarEmprestimo() {
-    //     // completar
-    // }
+    public boolean registrarEmprestimo() {
+        if (podeEmprestar()) {
+            emprestimosAtivos++;
+            System.out.println("Empréstimo registrado com sucesso.");
+            return true;
+        } else {
+            System.out.println("Não é possível registrar o empréstimo. Limite atingido.");
+            return false;
+        }
+    }
 
-    // public boolean registrarDevolucao() {
-    //     // completar
-    // }
+    public boolean registrarDevolucao() {
+        if (emprestimosAtivos > 0) {
+            emprestimosAtivos--;
+            System.out.println("Devolução registrada com sucesso.");
+            return true;
+        } else {
+            System.out.println("Não há empréstimos ativos para devolver.");
+            return false;
+        }
+    }
 
     @Override
     public String toString() {
